@@ -1,5 +1,4 @@
-const { idSchema, addProductSchema } = require('./schemas');
-// const { productModel } = require('../../models');
+const { idSchema, addProductSchema, addSalesSchema } = require('./schemas');
 
 const validateId = (productId) => {
   const { error } = idSchema.validate(productId);
@@ -23,7 +22,30 @@ const validateNewProduct = (name) => {
   return { type: null, message: '' };
 };
 
+const validateSales = (sale) => {
+  const { error } = addSalesSchema.validate(sale);
+  console.log(error);
+
+//   if (!sale.productId) return { type: 'BAD_REQUEST', message: { message: '"productId" is required' } };
+//   if (!sale.quantity) return { type: 'BAD_REQUEST', message: { message: '"quantity" is required' } };
+
+//   if (sale.productId < 1) {
+//   return {
+//     type: 'INVALID_VALUE',
+//     message: { message: '"productId" must be greater than or equal to 1' },
+//   }; 
+// }
+
+//   if (sale.quantity < 1) {
+//   return {
+//     type: 'INVALID_VALUE',
+//     message: { message: '"quantity" must be greater than or equal to 1' },
+//   }; 
+// }
+};
+
 module.exports = {
   validateId,
   validateNewProduct,
+  validateSales,
 };
