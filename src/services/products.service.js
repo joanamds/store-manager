@@ -22,8 +22,9 @@ const createProduct = async (newProduct) => {
   if (error.type) return error;
 
   const product = await productModel.insertProduct(newProduct);
+  const getProduct = await productModel.findById(product);
 
-  return { type: null, message: product };
+  return { type: null, message: getProduct };
 };
 
 module.exports = {
