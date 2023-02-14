@@ -13,6 +13,12 @@ const allProducts = [
   }
 ];
 
+const product = {
+  id: 1,
+  name: 'Martelo de Thor' 
+}
+
 module.exports = {
   allProducts,
+  product,
 }
