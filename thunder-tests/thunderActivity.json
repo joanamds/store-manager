@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2023-02-13T20:39:49.913Z",
-    "modified": "2023-02-14T18:01:12.768Z",
+    "modified": "2023-02-14T18:57:55.970Z",
     "headers": [],
     "params": [],
     "body": {
@@ -37,11 +37,11 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3000",
-    "url": "http://localhost:3000",
+    "url": "http://localhost:3000/products/",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-02-13T20:40:08.613Z",
-    "modified": "2023-02-13T20:40:08.613Z",
+    "modified": "2023-02-14T19:04:48.354Z",
     "headers": [],
     "params": [],
     "tests": []

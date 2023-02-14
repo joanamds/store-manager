@@ -19,7 +19,7 @@ const getProduct = async (req, res) => {
 };
 
 const createProduct = async (req, res) => {
-  const name = req.body;
+  const { name } = req.body;
 
   const { type, message } = await productService.createProduct(name);
 

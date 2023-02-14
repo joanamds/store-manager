@@ -17,14 +17,14 @@ const getProductById = async (productId) => {
   return { type: null, message: product };
 };
 
-const createProduct = async (newProduct) => {
-  const error = schema.validateNewProduct(newProduct);
+const createProduct = async (name) => {
+  const error = schema.validateNewProduct(name);
   if (error.type) return error;
 
-  const product = await productModel.insertProduct(newProduct);
-  const getProduct = await productModel.findById(product);
+  const id = await productModel.insertProduct(name);
+  // const getProduct = await productModel.findById(id);
 
-  return { type: null, message: getProduct };
+  return { type: null, message: { id, name } };
 };
 
 module.exports = {

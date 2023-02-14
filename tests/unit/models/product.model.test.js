@@ -24,6 +24,15 @@ describe('Teste de unidade do model de produtos', function () {
     expect(result).to.be.deep.equal(productsList[0]);
   });
 
+  it('Cadastrando um novo produto', async function () {
+    sinon.stub(connection, 'execute').resolves([{insertId: 32}]);
+
+    const result = await productModel.insertProduct({ name: 'Mascara do Batman' });
+    console.log(result);
+
+    expect(result).to.equal(32);
+  });
+
   afterEach(function () {
     sinon.restore();
   });
