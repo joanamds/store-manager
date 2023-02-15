@@ -24,24 +24,18 @@ const validateNewProduct = (name) => {
 
 const validateSales = (sale) => {
   const { error } = addSalesSchema.validate(sale);
-  console.log(error);
 
-//   if (!sale.productId) return { type: 'BAD_REQUEST', message: { message: '"productId" is required' } };
-//   if (!sale.quantity) return { type: 'BAD_REQUEST', message: { message: '"quantity" is required' } };
+  if (error) {
+    const errorMessage = error.details[0].message;
+    if (Object.keys(error.details[0]) === 'any.required') {
+      return { type: 'BAD_REQUEST', message: errorMessage };
+    }
+    if (Object.keys(error.details[0]) === 'number.min') {
+      return { type: 'INVALID_VALUE', message: errorMessage };
+    }
+  }
 
-//   if (sale.productId < 1) {
-//   return {
-//     type: 'INVALID_VALUE',
-//     message: { message: '"productId" must be greater than or equal to 1' },
-//   }; 
-// }
-
-//   if (sale.quantity < 1) {
-//   return {
-//     type: 'INVALID_VALUE',
-//     message: { message: '"quantity" must be greater than or equal to 1' },
-//   }; 
-// }
+  return { type: null, message: '' };
 };
 
 module.exports = {
