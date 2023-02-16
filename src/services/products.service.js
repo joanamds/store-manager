@@ -27,8 +27,13 @@ const createProduct = async (name) => {
 };
 
 const updateById = async (id, product) => {
+  const error = schema.validateNewProduct(product.name);
+  if (error.type) return error;
+
   const existProduct = await productModel.findById(id);
-  if (!existProduct) return { type: 404, message: 'Product not found' };
+
+  if (!existProduct) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
+  
   const newProduct = await productModel.updateProductById(id, product);
   return { type: null, message: newProduct };
 };

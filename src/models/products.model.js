@@ -36,6 +36,7 @@ const updateProductById = async (productId, { name }) => {
     'SELECT * FROM StoreManager.products WHERE id = ?',
     [productId],
   );
+
   return updatedProduct;
 };
 
