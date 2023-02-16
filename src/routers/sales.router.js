@@ -6,9 +6,7 @@ const routerSales = express.Router();
 const validate = [validateQuantity, validateProductId];
 
 routerSales.get('/', salesController.listSales);
-
 routerSales.post('/', validate, salesController.createSale);
-
 routerSales.get('/:id', salesController.getSale);
 
 module.exports = routerSales;
