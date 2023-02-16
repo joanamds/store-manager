@@ -13,7 +13,7 @@ const findById = async (productId) => {
     'SELECT * from StoreManager.products WHERE id = ?',
     [productId],
   );
-
+  
   return result;
 };
 
@@ -26,8 +26,22 @@ const insertProduct = async (name) => {
   return insertId;
 };
 
+const updateProductById = async (productId, { name }) => {
+  await connection.execute(
+    'UPDATE StoreManager.products SET name = ? WHERE id = ?',
+    [name, productId],
+  );
+
+  const [updatedProduct] = await connection.execute(
+    'SELECT * FROM StoreManager.products WHERE id = ?',
+    [productId],
+  );
+  return updatedProduct;
+};
+
 module.exports = {
   findAll,
   findById,
   insertProduct,
+  updateProductById,
 };
