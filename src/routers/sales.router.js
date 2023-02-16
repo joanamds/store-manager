@@ -7,4 +7,8 @@ const validate = [validateQuantity, validateProductId];
 
 routerSales.post('/', validate, salesController.createSale);
 
+routerSales.get('/', salesController.listSales);
+
+routerSales.get('/:id', salesController.getSale);
+
 module.exports = routerSales;
