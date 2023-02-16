@@ -5,9 +5,9 @@ const { validateQuantity, validateProductId } = require('../middlewares/validate
 const routerSales = express.Router();
 const validate = [validateQuantity, validateProductId];
 
-routerSales.post('/', validate, salesController.createSale);
-
 routerSales.get('/', salesController.listSales);
+
+routerSales.post('/', validate, salesController.createSale);
 
 routerSales.get('/:id', salesController.getSale);
 
