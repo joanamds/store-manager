@@ -2,19 +2,20 @@ const { productService } = require('../services');
 
 const validateProductId = async (req, res, next) => {
   const sales = req.body;
-  
+  const { message } = await productService.getProducts();
+
   for (let index = 0; index < sales.length; index += 1) {
     if (!sales[index].productId) {
       return res.status(400).json({ message: '"productId" is required' });
     }
 
-    const getProduct = productService.getProductById(sales[index].productId);
-    
-    if (getProduct.type !== null) {
+    const findProduct = message.some((product) => product.id === sales[index].productId);
+    if (!findProduct) {
       return res.status(404).json({ message: 'Product not found' });
     }
-    next();
   }
+
+  next();
 };
 
 const validateQuantity = async (req, res, next) => {
