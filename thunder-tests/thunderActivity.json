@@ -4,16 +4,16 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3000/products",
-    "url": "http://localhost:3000/products/2",
-    "method": "DELETE",
+    "url": "http://localhost:3000/sales",
+    "method": "GET",
     "sortNum": 0,
     "created": "2023-02-13T20:39:49.913Z",
-    "modified": "2023-02-17T18:54:27.002Z",
+    "modified": "2023-02-17T20:22:36.459Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"Capitao america\"\n}",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 10\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 50\n  }\n]",
       "form": []
     },
     "tests": []
@@ -63,6 +63,53 @@
     "modified": "2023-02-13T21:37:45.448Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "bf83c399-3787-40b9-ba9d-4437eb7594eb",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales",
+    "url": "http://localhost:3000/sales",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-17T20:23:38.454Z",
+    "modified": "2023-02-17T20:23:38.454Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "876526ba-6a67-4403-87f6-cb2e9fc8b995",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales/2",
+    "url": "http://localhost:3000/sales/2",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-17T20:23:44.527Z",
+    "modified": "2023-02-17T20:23:44.527Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "1307dd80-54ed-4563-afce-8b4658026c49",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales/2",
+    "url": "http://localhost:3000/sales/88",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-02-17T20:24:18.185Z",
+    "modified": "2023-02-17T20:53:36.999Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 10\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 50\n  }\n]",
+      "form": []
+    },
     "tests": []
   }
 ]

@@ -37,9 +37,27 @@ const deleteSaleById = async (id) => {
   return { type: null, message: deleteSale };
 };
 
+const updateSaleById = async (saleId, sales) => {
+  const existSale = await salesModel.innerSales(saleId);
+  if (existSale.length === 0) {
+    return {
+      type: 'SALE_NOT_FOUND', message: 'Sale not found' };
+  }
+
+  console.log(existSale);
+
+  const itemsUpdated = await Promise.all(sales.map(({ productId, quantity }) => {
+    salesModel.updateSale(saleId, productId, quantity);
+    return { productId, quantity };
+  }));
+  console.log(itemsUpdated);
+  return { type: null, message: { saleId, itemsUpdated } };
+};
+
 module.exports = {
   insertSale,
   getSaleById,
   getAllSales,
   deleteSaleById,
+  updateSaleById,
 };

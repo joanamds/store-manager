@@ -57,7 +57,8 @@ const updateSale = async (saleId, productId, quantity) => {
   );
 
   const [updatedSale] = await connection.execute(
-    'SELECT * FROM StoreManager.sales_products',
+    'SELECT * FROM StoreManager.sales_products WHERE sale_id = ?',
+    [saleId],
   );
 
   return updatedSale;
