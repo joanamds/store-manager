@@ -8,5 +8,6 @@ const validate = [validateQuantity, validateProductId];
 routerSales.get('/', salesController.listSales);
 routerSales.post('/', validate, salesController.createSale);
 routerSales.get('/:id', salesController.getSale);
+routerSales.delete('/:id', salesController.deleteSale);
 
 module.exports = routerSales;

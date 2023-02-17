@@ -24,8 +24,22 @@ const getAllSales = async () => {
   return { type: null, message: sales };
 };
 
+const deleteSaleById = async (id) => {
+  const existSale = await salesModel.innerSales(id);
+
+  if (existSale.length === 0) {
+    return {
+      type: 'SALE_NOT_FOUND', message: { message: 'Sale not found' },
+    };
+  }
+
+  const deleteSale = await salesModel.deleteSale(id);
+  return { type: null, message: deleteSale };
+};
+
 module.exports = {
   insertSale,
   getSaleById,
   getAllSales,
+  deleteSaleById,
 };
