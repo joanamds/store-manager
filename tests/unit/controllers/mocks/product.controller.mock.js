@@ -18,7 +18,19 @@ const product = {
   name: 'Martelo de Thor' 
 }
 
+const newProduct = {
+  id: 4,
+  name: 'Capa do Super Homem'
+}
+
+const productUpdated = {
+  id: 1,
+  name: "Máscara do Maskara"
+}
+
 module.exports = {
   allProducts,
   product,
+  newProduct,
+  productUpdated,
 }

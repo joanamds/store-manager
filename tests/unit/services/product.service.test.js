@@ -67,6 +67,17 @@ describe('Testa a unidade services de produtos', function () {
     });    
   });
 
+  describe('Verifica se é possível atualizar um producto', function () {
+    it('Deve atualizar um produto com sucesso', async function () {
+      sinon.stub(productModel, 'updateProductById').resolves(productUpdated);
+
+      const result = await productService.updateById(1, { name: 'Máscara do Maskara' });
+
+      expect(result.type).to.equal(null);
+      expect(result.message).to.deep.equal(productUpdated);
+    });
+  })
+
   describe('Verifica se é possível deletar um produto', function () {
     it('Deve retornar type null e mensagem vazia caso for deletado', async function () {
       sinon.stub(productModel, 'deleteProduct').resolves();
@@ -78,7 +89,7 @@ describe('Testa a unidade services de produtos', function () {
     });
 
     it('Deve retornar erro caso o id não exista', async function () {
-      sinon.stub(productModel, 'deleteProduct').resolves(productUpdated);
+      sinon.stub(productModel, 'deleteProduct').rejects(new Error);
 
       const result = await productService.deleteById(99);
 
