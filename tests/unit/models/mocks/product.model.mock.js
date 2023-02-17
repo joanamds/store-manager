@@ -18,7 +18,13 @@ const product = {
   "name": "Martelo de Thor"
 }
 
+const productUpdated = {
+  "id": 2,
+  "name": "Máscara do Maskara"
+}
+
 module.exports = {
   productsList,
   product,
+  productUpdated,
 }
