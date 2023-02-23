@@ -26,6 +26,14 @@ docker exec -it talker_manager bash
 ```bash
 npm install
 ``` 
+
+> Para rodar a API 
+
+* Rode o seguinte comando dentro do container: 
+```bash
+npm run debug
+```
+
 > Testes
 
 * Dentro do terminal do container:
