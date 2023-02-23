@@ -52,6 +52,8 @@ npm run test:mocha
 npm install
 ``` 
 
+* Renomeie o arquivo '.env.example' para '.env'
+
 * Execute a aplicação com 
 ```bash
 npm start
