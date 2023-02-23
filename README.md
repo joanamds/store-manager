@@ -60,7 +60,7 @@ npm start
 Ou: 
 
 ```bash
-npm run dev
+npm run debug
 ```
 
 > Testes
