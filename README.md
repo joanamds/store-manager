@@ -19,7 +19,7 @@ docker-compose up -d
 
 * Em seguida abra o terminal interativo do container: 
 ```bash
-docker exec -it talker_manager bash
+docker exec -it store_manager bash
 ``` 
 
 * Instale as dependências dentro do container: 
